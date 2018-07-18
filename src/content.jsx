@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ReactDOM from 'react-dom';
 
-export default class HomePage extends React.Component {
+export default class ContentPage extends React.Component {
     render() {
         //let viewText = "テストページ";
         return (
             <div>
-                <p>このページはHomeです。</p>
+                <p>このページはContentです。</p>
             </div>
         )
     }

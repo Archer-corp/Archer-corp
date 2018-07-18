@@ -20,7 +20,12 @@ import purple from '@material-ui/core/colors/purple';
 import orange from '@material-ui/core/colors/orange';
 import Button from '@material-ui/core/Button';
 
-import HomeComponent from './home.jsx';
+//別のソースをインポート
+import HomePage from './home.jsx';
+import RankingPage from './ranking.jsx';
+import MyPage from './myPage.jsx';
+import ContentPage from './content.jsx';
+
 
 export const myTheme = createMuiTheme({
 
@@ -31,6 +36,7 @@ export const myTheme = createMuiTheme({
 
 });
 
+//CSS
 const styles = {
     root: {
         position:'fixed',
@@ -50,6 +56,7 @@ class Archer extends React.Component {
         this.setState({ value });
     };
 
+    //index.htmlの中身的な
     render() {
         const { classes } = this.props;
         const { value } = this.state;
@@ -69,11 +76,11 @@ class Archer extends React.Component {
                 </BottomNavigation>
 
 
-                {value === 0 && <HomeComponent /> }
+                {value === 0 && <HomePage /> }
 
-            {value === 1 && <p>保存したコンテンツ</p>}
-            {value === 2 && <p>ランキング</p>}
-            {value === 3 && <p>マイページ</p>}
+                {value === 1 && <ContentPage />}
+                {value === 2 && <RankingPage/>}
+            {value === 3 && <MyPage/>}
                 
             </MuiThemeProvider>
         );
