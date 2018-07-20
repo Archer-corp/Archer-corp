@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 //別のソースをインポート
 import './App.css';
 import MainPage from './mainPage.jsx'
+import LoginPage from './loginPage.jsx';
 
 import purple from '@material-ui/core/colors/purple';
 import orange from '@material-ui/core/colors/orange';
@@ -17,6 +18,7 @@ import {
     BrowserRouter,
     Route
 } from "react-router-dom";
+import loginPage from './loginPage';
 
 
 export const myTheme = createMuiTheme({
@@ -42,6 +44,7 @@ class Archer extends React.Component {
                 <MuiThemeProvider theme={myTheme}>
 
                     <Route exact path="/" component={MainPage} />
+                    <Route path="/login" component={loginPage} />
 
                 </MuiThemeProvider>
             </BrowserRouter>
