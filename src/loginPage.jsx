@@ -9,15 +9,19 @@ import Button from '@material-ui/core/Button';
 
 //CSS
 var loginPageCSS = {
-
+    div: {
+        width:'100%',
+        position:'absolute',
+        top: window.innerHeight * 0.3,
+    },
     text: {
         width:'4em',
-        margin:'auto',
+        margin:'0 auto',
     },
     input: {
         display: 'flex',
         width: '80%',
-        margin: 'auto',
+        margin: '0 auto',
     },
     button: {
         width:'30%',
@@ -49,7 +53,7 @@ class LoginPage extends React.Component {
     //index.htmlの中身的な
     render() {
         return (
-            <div>
+            <div style={loginPageCSS.div}>
                 <p style={loginPageCSS.text}>ログイン</p>
 
                 <TextField
@@ -60,7 +64,7 @@ class LoginPage extends React.Component {
                     onChange={this.onChangeEmail}
                     style={loginPageCSS.input}
                />
-                <p/>
+                <br/>
                 <TextField
                     id="password-input"
                     label="Password"
@@ -69,7 +73,7 @@ class LoginPage extends React.Component {
                     onChange={this.onChangePassword}
                     style={loginPageCSS.input}
                 />
-                <p/>
+                <br/>
                 <Button color="secondary" variant="contained" onClick={this.onClickedLogin} style={loginPageCSS.button}>Login</Button>
             </div>
         );
