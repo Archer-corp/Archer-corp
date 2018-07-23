@@ -24,7 +24,6 @@ var mainPageCSS = {
         width: window.innerWidth,
         bottom: 0,
     },
-
 };
 
 class MainPage extends React.Component {

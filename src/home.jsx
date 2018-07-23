@@ -8,7 +8,7 @@ export default class HomePage extends React.Component {
         //let viewText = "テストページ";
         return (
             <div>
-                <p>このページはHomeです。</p>
+                <p>HomePage</p>
             </div>
         )
     }
