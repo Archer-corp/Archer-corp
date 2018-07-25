@@ -20,6 +20,7 @@ import Divider from '@material-ui/core/Divider';
 //CSS
 var mainPageCSS = {
     bottomTab: {
+        zIndex: '5',
         position: 'fixed',
         width: window.innerWidth,
         bottom: 0,
