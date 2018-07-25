@@ -17,6 +17,9 @@ import RankingIcon from '@material-ui/icons/Star';
 import FolderIcon from '@material-ui/icons/Favorite';
 import HomeIcon from '@material-ui/icons/Home';
 
+//Firebase
+import firebase from 'firebase';
+
 //CSS
 var loginPageCSS = {
     bottomTab: {
