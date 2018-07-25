@@ -127,7 +127,7 @@ class Login extends React.Component {
             }).catch(function (error) {
                 console.error('Error(' + error.code + '): ' + error.message);
             });
-
+        this.props.history.push("/");
     }
 
     onChangeEmail = event => {
