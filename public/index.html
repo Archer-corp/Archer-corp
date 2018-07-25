@@ -10,6 +10,28 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="icon" href="%PUBLIC_URL%/icon192.png">
 
+    <!-------------FIRE BASE------------>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-functions.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBK8ri7rFLGHWz10l9BH6xYG82PjweYECk",
+            authDomain: "archer-corp.firebaseapp.com",
+            databaseURL: "https://archer-corp.firebaseio.com",
+            projectId: "archer-corp",
+            storageBucket: "archer-corp.appspot.com",
+            messagingSenderId: "208210760399"
+        };
+        firebase.initializeApp(config);
+
+    </script>
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/4.3.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -21,13 +43,17 @@
     <script defer src="/__/firebase/init.js"></script>
 
 
+
     <title>Archer</title>
 </head>
-  <body>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+
     <noscript>
-      You need to enable JavaScript to run this app.
+        You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
+</body>
 
-  </body>
+
 </html>

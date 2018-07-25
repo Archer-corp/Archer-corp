@@ -18,7 +18,9 @@ import FolderIcon from '@material-ui/icons/Favorite';
 import HomeIcon from '@material-ui/icons/Home';
 
 //Firebase
-import firebase from 'firebase';
+//import firebase from 'firebase';
+var firebase = require("firebase/app");
+require("firebase/auth");
 
 //CSS
 var loginPageCSS = {
@@ -168,8 +170,18 @@ class Signin extends React.Component {
     };
 
     onClickedSignin = () => {
-        console.log("LOGIN!");
-        this.props.history.push("/");
+
+        //------------------------------------------------------------------------------
+
+        console.log("SIGN IN!");
+
+        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .catch(function (error) {
+                if (error) {
+                    console.error('Error(' + error.code + '): ' + error.message);
+                }
+            });
+        //this.props.history.push("/");
     }
 
     onChangeEmail = event => {
