@@ -101,11 +101,11 @@ class LoginPage extends React.Component {
                         showLabels
                     >
                         <BottomNavigationAction label="Log in" icon={<HomeIcon />} />
-                        <BottomNavigationAction label="Sign in" icon={<FolderIcon />} />
+                        <BottomNavigationAction label="Sign up" icon={<FolderIcon />} />
                     </BottomNavigation>
                 </div>
                 {value === 0 && <Login history={this.props.history} />}
-                {value === 1 && <Signin history={this.props.history} />}
+                {value === 1 && <Signup history={this.props.history} />}
             </div>
            
         );
@@ -119,8 +119,15 @@ class Login extends React.Component {
     };
 
     onClickedLogin = () => {
+        var isOK = true;
         console.log("LOGIN!");
-        this.props.history.push("/");
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then(function () {
+                console.log("ログイン成功");
+            }).catch(function (error) {
+                console.error('Error(' + error.code + '): ' + error.message);
+            });
+
     }
 
     onChangeEmail = event => {
@@ -162,7 +169,7 @@ class Login extends React.Component {
     }
 }
 
-class Signin extends React.Component {
+class Signup extends React.Component {
     state = {
         email: '',
         password: '',
@@ -170,16 +177,12 @@ class Signin extends React.Component {
     };
 
     onClickedSignin = () => {
-
-        //------------------------------------------------------------------------------
-
-        console.log("SIGN IN!");
-
+        console.log("SIGN UP!");
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .catch(function (error) {
-                if (error) {
-                    console.error('Error(' + error.code + '): ' + error.message);
-                }
+            .then(function () {
+                console.log("サインイン成功");
+            }).catch(function (error) {
+                console.error('Error(' + error.code + '): ' + error.message);
             });
         //this.props.history.push("/");
     }
@@ -229,7 +232,7 @@ class Signin extends React.Component {
                 />
  
                 <br />
-                <Button color="secondary" variant="contained" onClick={this.onClickedSignin} style={loginPageCSS.button}>Sign in</Button>
+                <Button color="secondary" variant="contained" onClick={this.onClickedSignin} style={loginPageCSS.button}>Sign up</Button>
                 <br />
             </div>
         );
